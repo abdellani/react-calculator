@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Application from './Application'
 
-const App = () => <h1>Hello microverse !!</h1>;
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Application />, document.getElementById('root'));
