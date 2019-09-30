@@ -1,15 +1,15 @@
-import React from "react";
-import { Button } from "./Button";
+import React from 'react';
+import Button from './Button';
 
-let group1 = ["AC", "+/-", "%", "+"]
-let group2 = ["7", "8", "9", "X"]
-let group3 = ["4", "5", "6", "-"]
-let group4 = ["1", "2", "3", "+"]
-let group5 = ["0", ".", "="]
+const group1 = ['AC', '+/-', '%', '+'];
+const group2 = ['7', '8', '9', 'X'];
+const group3 = ['4', '5', '6', '-'];
+const group4 = ['1', '2', '3', '+'];
+const group5 = ['0', '.', '='];
 
-let renderGroup = (group) => <div>{group.map((name) => <Button name={name} />)}</div>
+const renderGroup = (group) => <div>{group.map((name) => <Button name={name} />)}</div>;
 
-export const ButtonPanel = () =>
+const ButtonPanel = () => (
   <div>
     {renderGroup(group1)}
     {renderGroup(group2)}
@@ -17,3 +17,5 @@ export const ButtonPanel = () =>
     {renderGroup(group4)}
     {renderGroup(group5)}
   </div>
+);
+export default ButtonPanel;
