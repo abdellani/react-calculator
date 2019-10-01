@@ -4,18 +4,22 @@ const calculate = ({ total, next, operation }, buttonName) => {
   switch (buttonName) {
     case 'AC':
       return {
-        total: 0,
+        total: (0).toString(),
+        operation:null,
+        next:null
       };
     case '%':
       if (next) {
         return {
           total,
           operation,
-          next: next / 100,
+          next: (next / 100).toString(),
         };
       }
       return {
-        total: total / 100,
+        total: (total / 100).toString(),
+        operation:null,
+        next:null
       };
 
     case '+/-':
@@ -23,18 +27,24 @@ const calculate = ({ total, next, operation }, buttonName) => {
         return {
           total,
           operation,
-          next: -next,
+          next: (-next).toString(),
         };
       }
       return {
-        total: -total,
+        total: (-total).toString(),
+        operation:null,
+        next:null
       };
 
     case '=':
       if (operation) {
-        return { total: operate(total, next, operation) };
+        return { 
+          total: operate(total, next, operation),
+          operation:null,
+          next:null
+         };
       }
-      return { total: (total) || 0 };
+      return { total: (total) || (0).toString() };
 
     case '+':
     case '-':
@@ -44,23 +54,27 @@ const calculate = ({ total, next, operation }, buttonName) => {
         return {
           total: operate(total, next, operation),
           operation: buttonName,
+          next:null
         };
       }
       return {
         total,
         operation: buttonName,
+        next:null
       };
 
     default:
-      if (next) {
+      if (operation) {
         return {
           total,
           operation,
-          next: next + buttonName,
+          next: [next , buttonName].join(""),
         };
       }
       return {
-        total: total + buttonName,
+        total: [total,buttonName].join(""),
+        operation:null,
+        next:null
       };
   }
 };
