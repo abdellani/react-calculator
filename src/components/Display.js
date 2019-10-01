@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Display = (props) => {
-  let { result } = props;
+  const { result } = props;
   return (
     <div>
       <input value={result} style={{ textAlign: 'right' }} readOnly />
