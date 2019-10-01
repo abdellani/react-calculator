@@ -7,7 +7,18 @@ const group3 = ['4', '5', '6', '-'];
 const group4 = ['1', '2', '3', '+'];
 const group5 = ['0', '.', '='];
 
-const renderGroup = group => <div>{group.map((name) => <Button key={name} name={name} />)}</div>;
+
+const renderGroup = group => <div>{
+  group.map((name, index) =>
+    <Button
+      key={name}
+      name={name}
+      color={(index === group.length - 1)? undefined: true } 
+      width={(name === "0") ? true : false}
+    />
+  )
+}
+</div>;
 
 const ButtonPanel = () => (
   <div className="button-panel">
