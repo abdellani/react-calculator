@@ -45,12 +45,11 @@ const calculate = ({ total, next, operation }, buttonName) => {
          };
       }
       return { total: (total) || (0).toString() };
-
     case '+':
     case '-':
     case 'X':
     case '÷':
-      if (operation) {
+      if (operation && next) {
         return {
           total: operate(total, next, operation),
           operation: buttonName,
