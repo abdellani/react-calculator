@@ -1,5 +1,5 @@
 import React from 'react';
-import "../scss/application.scss"
+import '../scss/application.scss';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 

@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = (props) => {
-  const { name,color,width } = props;
+  const { name, color, width } = props;
   return (
-    <button 
-    type="button"
-    className={[
-      (color)?"white":undefined,
-      (width)?"double-size":undefined
-    ].join(" ")}
+    <button
+      type="button"
+      className={[
+        (color) ? 'white' : undefined,
+        (width) ? 'double-size' : undefined,
+      ].join(' ')}
     >
       {name}
     </button>
@@ -17,15 +17,12 @@ const Button = (props) => {
 };
 Button.propTypes = {
   name: PropTypes.string.isRequired,
-  color:PropTypes.bool,
-  width:PropTypes.bool.isRequired
+  color: PropTypes.bool,
+  width: PropTypes.bool.isRequired,
 };
 
-/**
-      style={{
-      backgroundColor:color,
-      width:(width)? "50%":"25%"
-      }}
+Button.defaultProps = {
+  color: false,
+};
 
- */
 export default Button;
