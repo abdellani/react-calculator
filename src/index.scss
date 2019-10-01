@@ -1,0 +1,25 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+
+  #calculator {
+    background-color: red;
+    width: 700px;
+    margin: auto;
+
+    #display{
+      height: 100px;
+      width: 100%;
+      background-color: gray;
+      border-width: 0;
+    }
+
+    #button-panel{
+      background-color: green;
+    }
+
+  }
+}

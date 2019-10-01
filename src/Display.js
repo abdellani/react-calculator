@@ -7,14 +7,9 @@ const Display = (props) => {
     result = '0';
   }
   return (
-    <div>
-      <input value={result} style={{ textAlign: 'right' }} readOnly />
-    </div>
+      <input id="display" value={result} style={{ textAlign: 'right' }} readOnly />
   );
 };
-// Display.defaultProps = {
-//   result: '0',
-// };
 Display.propTypes = {
   result: PropTypes.string.isRequired,
 };
