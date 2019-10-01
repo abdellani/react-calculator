@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = (props) => {
-  const { name, color, width } = props;
+  const { name, color, width,clickHandler } = props;
+  
   return (
     <button
       type="button"
@@ -10,6 +11,7 @@ const Button = (props) => {
         (color) ? 'white' : undefined,
         (width) ? 'double-size' : undefined,
       ].join(' ')}
+      onClick={()=>clickHandler(name)}
     >
       {name}
     </button>

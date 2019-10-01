@@ -1,17 +1,17 @@
-import Big from 'big';
+import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
   const x = Big(numberOne);
   const y = Big(numberTwo);
   switch (operation) {
     case '+':
-      return x.plus(y);
+      return x.plus(y).toString();
     case '-':
-      return x.minus(y);
+      return x.minus(y).toString();
     case 'X':
-      return x.times(y);
+      return x.times(y).toString();
     case '÷':
-      return x.div(y);
+      return x.div(y).toString();
     default:
       return 0;
   }
