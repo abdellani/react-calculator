@@ -63,6 +63,17 @@ const calculate = ({ total, next, operation }, buttonName) => {
       };
 
     default:
+      if (buttonName === '.') {
+        if ((next && next.indexOf('.') >= 0)
+          || (total && total.indexOf('.') >= 0)
+        ) {
+          return {
+            total,
+            operation,
+            next,
+          };
+        }
+      }
       if (operation) {
         return {
           total,
