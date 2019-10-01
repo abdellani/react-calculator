@@ -5,8 +5,8 @@ const calculate = ({ total, next, operation }, buttonName) => {
     case 'AC':
       return {
         total: (0).toString(),
-        operation:null,
-        next:null
+        operation: null,
+        next: null,
       };
     case '%':
       if (next) {
@@ -18,8 +18,8 @@ const calculate = ({ total, next, operation }, buttonName) => {
       }
       return {
         total: (total / 100).toString(),
-        operation:null,
-        next:null
+        operation: null,
+        next: null,
       };
 
     case '+/-':
@@ -32,17 +32,17 @@ const calculate = ({ total, next, operation }, buttonName) => {
       }
       return {
         total: (-total).toString(),
-        operation:null,
-        next:null
+        operation: null,
+        next: null,
       };
 
     case '=':
       if (operation) {
-        return { 
+        return {
           total: operate(total, next, operation),
-          operation:null,
-          next:null
-         };
+          operation: null,
+          next: null,
+        };
       }
       return { total: (total) || (0).toString() };
     case '+':
@@ -53,13 +53,13 @@ const calculate = ({ total, next, operation }, buttonName) => {
         return {
           total: operate(total, next, operation),
           operation: buttonName,
-          next:null
+          next: null,
         };
       }
       return {
         total,
         operation: buttonName,
-        next:null
+        next: null,
       };
 
     default:
@@ -67,13 +67,13 @@ const calculate = ({ total, next, operation }, buttonName) => {
         return {
           total,
           operation,
-          next: [next , buttonName].join(""),
+          next: [next, buttonName].join(''),
         };
       }
       return {
-        total: [total,buttonName].join(""),
-        operation:null,
-        next:null
+        total: [total, buttonName].join(''),
+        operation: null,
+        next: null,
       };
   }
 };
