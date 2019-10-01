@@ -7,7 +7,7 @@ const Display = (props) => {
     result = '0';
   }
   return (
-      <input id="display" value={result} style={{ textAlign: 'right' }} readOnly />
+      <input className="display" value={result} style={{ textAlign: 'right' }} readOnly />
   );
 };
 Display.propTypes = {

@@ -1,21 +1,21 @@
-*{
+* {
   box-sizing: border-box;
 }
-
 .calculator {
   background-color: red;
   width: 700px;
   margin: auto;
 
-  .display{
+  .display {
     height: 100px;
     width: 100%;
-    background-color: gray;
     border-width: 0;
+    background-color: gray;
+    color: white;
+
   }
 
-  .button-panel{
+  .button-panel {
     background-color: green;
   }
-
 }
