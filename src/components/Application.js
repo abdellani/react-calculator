@@ -2,7 +2,7 @@ import React from 'react';
 import '../scss/application.scss';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-import calculate from '../logic/calculate'
+import calculate from '../logic/calculate';
 
 export default class Application extends React.Component {
   constructor(props) {
@@ -10,27 +10,26 @@ export default class Application extends React.Component {
     this.state = {
       total: null,
       next: null,
-      operation: null
+      operation: null,
     };
   }
-  handleClick(buttonName){
-    
-    console.log(calculate({...this.state},buttonName))    
-    this.setState(calculate({...this.state},buttonName))
 
+  handleClick(buttonName) {
+    console.log(calculate({ ...this.state }, buttonName));
+    this.setState(calculate({ ...this.state }, buttonName));
   }
 
   render() {
     return (
       <div className="calculator">
-        <Display 
-        result={
-          (this.state.next!==null)?this.state.next:
-          (this.state.total!==null)?this.state.total:
-          undefined
-          } 
+        <Display
+          result={
+          (this.state.next !== null) ? this.state.next
+            : (this.state.total !== null) ? this.state.total
+              : undefined
+          }
         />
-        <ButtonPanel clickHandler={(buttonName)=>this.handleClick(buttonName)}/>
+        <ButtonPanel clickHandler={(buttonName) => this.handleClick(buttonName)} />
       </div>
     );
   }

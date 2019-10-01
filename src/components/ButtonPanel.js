@@ -8,7 +8,7 @@ const group4 = ['1', '2', '3', '+'];
 const group5 = ['0', '.', '='];
 
 
-const renderGroup = (group,handleClick) => (
+const renderGroup = (group, handleClick) => (
   <div>
     {
       group.map((name, index) => (
@@ -25,15 +25,15 @@ const renderGroup = (group,handleClick) => (
 );
 
 const ButtonPanel = (props) => {
-  let handleClick=(buttonName)=> props.clickHandler(buttonName)
+  const handleClick = (buttonName) => props.clickHandler(buttonName);
   return (
     <div className="button-panel">
-      {renderGroup(group1,handleClick)}
-      {renderGroup(group2,handleClick)}
-      {renderGroup(group3,handleClick)}
-      {renderGroup(group4,handleClick)}
-      {renderGroup(group5,handleClick)}
+      {renderGroup(group1, handleClick)}
+      {renderGroup(group2, handleClick)}
+      {renderGroup(group3, handleClick)}
+      {renderGroup(group4, handleClick)}
+      {renderGroup(group5, handleClick)}
     </div>
   );
-}
+};
 export default ButtonPanel;
