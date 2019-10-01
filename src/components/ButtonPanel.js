@@ -10,7 +10,7 @@ const group5 = ['0', '.', '='];
 const renderGroup = group => <div>{group.map((name) => <Button name={name} />)}</div>;
 
 const ButtonPanel = () => (
-  <div id="button-panel">
+  <div className="button-panel">
     {renderGroup(group1)}
     {renderGroup(group2)}
     {renderGroup(group3)}
