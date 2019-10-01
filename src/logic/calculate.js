@@ -4,37 +4,37 @@ const calculate = ({ total, next, operation }, buttonName) => {
   switch (buttonName) {
     case 'AC':
       return {
-        total: 0
-      }
+        total: 0,
+      };
     case '%':
       if (next) {
         return {
-          total: total,
-          operation: operation,
-          next: next / 100
-        }
+          total,
+          operation,
+          next: next / 100,
+        };
       }
       return {
-        total: total / 100
-      }
+        total: total / 100,
+      };
 
     case '+/-':
       if (next) {
         return {
-          total: total,
-          operation: operation,
-          next: -next
-        }
+          total,
+          operation,
+          next: -next,
+        };
       }
       return {
-        total: -total
-      }
+        total: -total,
+      };
 
     case '=':
       if (operation) {
-        return { total: operate(total, next, operation) }
+        return { total: operate(total, next, operation) };
       }
-      return { total: (total)?total:0 }
+      return { total: (total) || 0 };
 
     case '+':
     case '-':
@@ -43,25 +43,25 @@ const calculate = ({ total, next, operation }, buttonName) => {
       if (operation) {
         return {
           total: operate(total, next, operation),
-          operation: buttonName
-        }
+          operation: buttonName,
+        };
       }
       return {
-        total: total,
-        operation: buttonName
-      }
+        total,
+        operation: buttonName,
+      };
 
     default:
       if (next) {
         return {
-          total: total,
-          operation: operation,
-          next: next + buttonName
-        }
+          total,
+          operation,
+          next: next + buttonName,
+        };
       }
       return {
-        total: total + buttonName
-      }
+        total: total + buttonName,
+      };
   }
 };
 
