@@ -94,7 +94,7 @@ const calculate = ({ total, next, operation }, buttonName) => {
         };
       }
       return {
-        total: [total, buttonName].join(''),
+        total: [(total === '0' && buttonName !== '.') ? null : total, buttonName].join(''),
         operation: null,
         next: null,
       };
