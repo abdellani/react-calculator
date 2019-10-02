@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 const Display = (props) => {
   const { result } = props;
   return (
-    <div>
-      <input value={result} style={{ textAlign: 'right' }} readOnly />
-    </div>
+    <input className="display" value={result} readOnly />
   );
 };
 Display.propTypes = {
