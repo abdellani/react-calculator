@@ -37,14 +37,18 @@ const calculate = ({ total, next, operation }, buttonName) => {
       };
 
     case '=':
-      if (operation) {
+      if (operation && operation !== '=') {
         return {
           total: operate(total, next, operation),
-          operation: null,
+          operation: buttonName,
           next: null,
         };
       }
-      return { total: (total) || (0).toString() };
+      return {
+        total: (total) || (0).toString(),
+        operation: buttonName,
+        next: null,
+      };
     case '+':
     case '-':
     case 'X':
@@ -63,6 +67,13 @@ const calculate = ({ total, next, operation }, buttonName) => {
       };
 
     default:
+      if (operation === '=') {
+        return {
+          total: buttonName,
+          operation,
+          next: null,
+        };
+      }
       if (buttonName === '.') {
         if ((next && next.indexOf('.') >= 0)
           || (total && total.indexOf('.') >= 0)
