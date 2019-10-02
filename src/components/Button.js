@@ -10,7 +10,7 @@ const Button = (props) => {
     <button
       type="button"
       className={[
-        (color) ? 'white' : undefined,
+        color,
         (width) ? 'double-size' : undefined,
       ].join(' ')}
       onClick={() => clickHandler(name)}
@@ -21,13 +21,13 @@ const Button = (props) => {
 };
 Button.propTypes = {
   name: PropTypes.string.isRequired,
-  color: PropTypes.bool,
+  color: PropTypes.string,
   width: PropTypes.bool.isRequired,
   clickHandler: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
-  color: false,
+  color: 'orange',
 };
 
 export default Button;

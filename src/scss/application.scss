@@ -34,10 +34,12 @@
         border: 1px solid #d7d7d7;
         color: black;
         font-size: 25px;
-        background-color: #fb8f30;
         width: 25%;
+        &.orange{
+          background-color: #fb8f30;
+        }
         &.white{
-          background: #dfdfdf;//"#dfdfdf";
+          background-color: #dfdfdf;
         }
         &.double-size{
           width: 50%;
