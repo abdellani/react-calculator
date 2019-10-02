@@ -7,7 +7,7 @@ const Button = (props) => {
     <button
       type="button"
       className={[
-        (color) ? 'white' : undefined,
+        color,
         (width) ? 'double-size' : undefined,
       ].join(' ')}
     >
@@ -17,12 +17,12 @@ const Button = (props) => {
 };
 Button.propTypes = {
   name: PropTypes.string.isRequired,
-  color: PropTypes.bool,
+  color: PropTypes.string,
   width: PropTypes.bool.isRequired,
 };
 
 Button.defaultProps = {
-  color: false,
+  color: 'orange',
 };
 
 export default Button;
