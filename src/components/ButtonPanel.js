@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 
 const group1 = ['AC', '+/-', '%', '÷'];
@@ -8,28 +9,38 @@ const group4 = ['1', '2', '3', '+'];
 const group5 = ['0', '.', '='];
 
 
-const renderGroup = group => (
+const renderGroup = (group, handleClick) => (
   <div>
     {
-  group.map((name, index) => (
-    <Button
-      key={name}
-      name={name}
-      color={(index === group.length - 1) ? undefined : 'white'}
-      width={(name === '0')}
-    />
-  ))
-}
+      group.map((name, index) => (
+        <Button
+          key={name}
+          name={name}
+          color={(index === group.length - 1) ? undefined : true}
+          width={(name === '0')}
+          clickHandler={handleClick}
+        />
+      ))
+    }
   </div>
 );
 
-const ButtonPanel = () => (
-  <div className="button-panel">
-    {renderGroup(group1)}
-    {renderGroup(group2)}
-    {renderGroup(group3)}
-    {renderGroup(group4)}
-    {renderGroup(group5)}
-  </div>
-);
+const ButtonPanel = (props) => {
+  const handleClick = (buttonName) => props.clickHandler(buttonName);
+  return (
+    <div className="button-panel">
+      {renderGroup(group1, handleClick)}
+      {renderGroup(group2, handleClick)}
+      {renderGroup(group3, handleClick)}
+      {renderGroup(group4, handleClick)}
+      {renderGroup(group5, handleClick)}
+    </div>
+  );
+};
+
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+};
+
+
 export default ButtonPanel;
