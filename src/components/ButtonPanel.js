@@ -15,7 +15,7 @@ const renderGroup = group => (
     <Button
       key={name}
       name={name}
-      color={(index === group.length - 1) ? undefined : true}
+      color={(index === group.length - 1) ? undefined : 'white'}
       width={(name === '0')}
     />
   ))
